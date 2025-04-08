@@ -48,9 +48,8 @@ The pipeline is designed to:
  - Scaled the deployment to 1 replicas using:
   ```bash
   kubectl scale deployment python-app --replicas=1
-
 ---
-🔗 Useful Links
+**##🔗 Useful Links**
 GitHub Repo: https://github.com/anushreegm/python-ci-cd
 
 DockerHub Image: https://hub.docker.com/r/anushreegm12/python-app
