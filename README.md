@@ -1,48 +1,57 @@
-# CI/CD Pipeline: Docker, Kubernetes, and Jenkins Integration
+# CI/CD Pipeline with Docker, Kubernetes, and Jenkins
 
-## 🚀 Objective
-
-This project demonstrates the automation of a complete CI/CD pipeline using Docker, Kubernetes, and Jenkins for a sample application. It includes steps to containerize the app, deploy it to Kubernetes, and automate the workflow using Jenkins.
+This project demonstrates a CI/CD pipeline that automates the build, containerization, and deployment of a Python web application using Docker, Kubernetes, and Jenkins.
 
 ---
 
-## 📦 Tech Stack
+## 🚀 Project Overview
 
+The pipeline is designed to:
+
+- Package and containerize the app
+- Push the Docker image to DockerHub
+- Deploy the image to a Kubernetes cluster
+- Scale the deployment up and down
+- Automate all steps via a Jenkins pipeline triggered by GitHub webhooks
+
+---
+
+## 📂 Tech Stack
+
+- Python
 - Docker
-- Kubernetes (Minikube or Managed Cluster)
-- Jenkins
+- Kubernetes (via Minikube or managed cluster)
+- Jenkins (Declarative Pipeline)
 - GitHub
 - DockerHub
-- Sample App: [Python / Node.js / Java - specify your stack]
 
 ---
 
-## ✅ Tasks Completed
+## 🔨 Tasks Performed
 
-### 🔹 Question 1: Containerize and Push the Application
+- Forked and cloned the sample Python application from GitHub.
+- Packaged the application into a zip archive (excluding `.git` files).
+- Wrote a `Dockerfile` to containerize the application.
+- Built and pushed the Docker image to DockerHub:  
+  👉 [`anushreegm12/python-app:latest`](https://hub.docker.com/r/anushreegm12/python-app)
 
-- Forked and cloned the sample application.
-- Packaged the application appropriately (e.g., JAR for Java, ZIP for Node.js/Python).
-- Created a Dockerfile to containerize the application.
-- Built the Docker image and pushed it to DockerHub.
-
-#### DockerHub Link:
-[👉 Docker Image on DockerHub](https://hub.docker.com/r/yourusername/your-image-name)
-
----
-
-### 🔹 Question 2: Kubernetes Deployment and Service Exposure
-
-- Created `deployment.yaml` to deploy the Docker image.
-- Created `service.yaml` to expose the application via NodePort.
-- Applied the YAMLs using `kubectl apply -f`.
-- Verified the deployment and accessed the app using public IP and NodePort.
-
----
-
-### 🔹 Question 3: Scale the Deployment
+- Created Kubernetes configuration files:
+  - `deployment.yaml` to deploy the Docker image
+  - `service.yaml` to expose the app via NodePort
+- Deployed the application using `kubectl apply`
+- Verified deployment and accessed service using `curl <NodeIP>:<NodePort>`
 
 - Scaled the deployment to 3 replicas using:
+  ```bash
+  kubectl scale deployment python-app --replicas=3
 
-```bash
-kubectl scale deployment your-deployment-name --replicas=3
+ - Scaled the deployment to 1 replicas using:
+  ```bash
+  kubectl scale deployment python-app --replicas=1
+
+🔗 Useful Links
+GitHub Repo: https://github.com/anushreegm/python-ci-cd
+
+DockerHub Image: https://hub.docker.com/r/anushreegm12/python-app
+
+
