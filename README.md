@@ -49,6 +49,7 @@ The pipeline is designed to:
   ```bash
   kubectl scale deployment python-app --replicas=1
 
+---
 🔗 Useful Links
 GitHub Repo: https://github.com/anushreegm/python-ci-cd
 
